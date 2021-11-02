@@ -1,4 +1,5 @@
-# Under construction - github.com/darpham
+# AWS Terraform/Terragrunt Infrastructure Code
+
 ## Overview
 This repository contains all the necessary modules needed to create the following resources in AWS.
 
