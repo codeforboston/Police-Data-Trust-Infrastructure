@@ -1,0 +1,26 @@
+locals {
+  environment        = "dev"
+  postgres_database  = "mydb"
+  path_patterns      = ["/*"]
+  application_type   = "web"
+    launch_type        = "FARGATE"
+    container_image    = "nginx:latest"
+    desired_count      = 1
+    container_port     = 80
+    container_cpu      = 256
+    container_memory   = 512
+    container_env_vars = [
+      {
+        name  = "ENVIRONMENT"
+        value = "dev"
+      },
+      {
+        name  = "DATABASE"
+        value = "mydb"
+      }
+    ]
+    health_check_path  = "/"
+    aws_managed_dns = true
+    project_name    = "myproject"
+    host_names      = ["myproject.mydomain.com"]
+}
