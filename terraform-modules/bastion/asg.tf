@@ -49,7 +49,15 @@ resource "aws_autoscaling_group" "bastion" {
     "GroupTotalInstances",
   ]
 
-  tags = local.asg_tags
+  dynamic "tag" {
+    for_each = merge(var.tags, { "Name" = "bastion-${local.envname}" })
+
+    content {
+      key                 = tag.key
+      value               = tag.value
+      propagate_at_launch = true
+    }
+  }
 
   lifecycle {
     create_before_destroy = true

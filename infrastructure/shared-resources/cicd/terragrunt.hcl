@@ -29,7 +29,7 @@ dependency "ecs" {
 }
 
 inputs = {
-  tags = local.tags
+  #tags = local.tags
 
   execution_role_arn           = dependency.ecs.outputs.task_execution_role_arn
   default_ecs_service_role_arn = dependency.ecs.outputs.default_ecs_service_role_arn

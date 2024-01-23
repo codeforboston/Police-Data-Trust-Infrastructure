@@ -55,5 +55,5 @@ inputs = {
   github_file           = local.github_file
   key_name              = local.key_name
 
-  tags = local.tags
+  #tags = local.tags
 }

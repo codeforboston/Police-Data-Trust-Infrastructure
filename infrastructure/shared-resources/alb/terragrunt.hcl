@@ -54,5 +54,5 @@ inputs = {
   resource_name   = local.resource_name
   default_alb_url = local.default_alb_url
 
-  tags = local.tags
+  #tags = local.tags
 }

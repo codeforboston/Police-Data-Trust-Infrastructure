@@ -14,20 +14,25 @@ locals {
   # Extract the variables we need for easy access
   aws_profile             = local.account_vars.locals.aws_profile
   aws_region              = local.account_vars.locals.aws_region
+  aws_version             = local.account_vars.locals.aws_version
   s3_terragrunt_region    = local.account_vars.locals.s3_terragrunt_region
   s3_terragrunt_bucket    = local.account_vars.locals.s3_terragrunt_bucket
   dynamodb_terraform_lock = local.account_vars.locals.dynamodb_terraform_lock
 }
 
 # Generate an AWS provider block
-generate "provider" {
-  path      = "provider.tf"
+generate "providers" {
+  path      = "providers.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 
-provider "aws" {
-  region  = "${local.aws_region}"
-  profile = "${local.aws_profile}"
+terraform {
+  required_providers {
+      aws = {
+        source = "hashicorp/aws"
+        version = "${local.aws_version}"
+    }
+  }
 }
 EOF
 }

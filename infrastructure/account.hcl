@@ -3,6 +3,7 @@
 locals {
   aws_profile   = "cfb-pdt"
   aws_region    = "us-east-1"
+  aws_version = ">= 5.20.0"
   namespace     = "cfb"
   resource_name = "infra"
 
