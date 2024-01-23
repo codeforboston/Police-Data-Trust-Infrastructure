@@ -7,7 +7,7 @@ output "cluster_id" {
 }
 
 output "ecs_asg_arn" {
-  value = module.asg.autoscaling_group_arn
+  value = aws_autoscaling_group.asg.arn
 }
 
 output "asg_capacity_prov" {
