@@ -87,18 +87,18 @@ variable "db_port" {
 
 variable "db_instance_class" {
   description = "The instance type of the db"
-  default     = "db.t3.small"
+  default     = "db.t4g.small"
 }
 variable "db_engine_version" {
   description = "the database major and minor version of postgres"
-  default     = "13.3"
+  default     = "16.1"
 }
 variable "db_allow_major_engine_version_upgrade" {
   default = true
 }
 
 variable "db_major_version" {
-  default = "13"
+  default = "16"
 }
 
 

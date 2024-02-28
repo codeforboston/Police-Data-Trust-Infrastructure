@@ -67,15 +67,15 @@ See examples folder
 | ecs_ec2_instance_count | Number of ECS EC2 instances to start with | `number` | 0 | no |
 
 ### Database
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| create_db_instance | Flag whether to create DB Instance | `string` | 'false' | no |
-| db_username | The name of the default postgres user created by RDS when the instance is booted | `string` | n/a | yes |
-| db_password | The postgres database password created for the default database when the instance is booted. :warning: do not put this into git!| `string` | n/a | yes |
-| db_instance_class | The name of the default postgres user created by RDS when the instance is booted | `string` | `"t3.small"` | no |
-| db_engine_version | The name of the default postgres user created by RDS when the instance is booted | `string` | `"12.5"` | no |
-| db_major_version | The name of the default postgres user created by RDS when the instance is booted | `string` | `"12"` | no |
-| db_snapshot_migration | Name of database snapshot to start the DB with, must be within the same region, must be same DB Engine/Version | `string` | `""` | no |
+| Name | Description | Type | Default       | Required |
+|------|-------------|------|---------------|:--------:|
+| create_db_instance | Flag whether to create DB Instance | `string` | 'false'       | no |
+| db_username | The name of the default postgres user created by RDS when the instance is booted | `string` | n/a           | yes |
+| db_password | The postgres database password created for the default database when the instance is booted. :warning: do not put this into git!| `string` | n/a           | yes |
+| db_instance_class | The name of the default postgres user created by RDS when the instance is booted | `string` | `"t4g.small"` | no |
+| db_engine_version | The name of the default postgres user created by RDS when the instance is booted | `string` | `"16.1"`      | no |
+| db_major_version | The name of the default postgres user created by RDS when the instance is booted | `string` | `"16"`        | no |
+| db_snapshot_migration | Name of database snapshot to start the DB with, must be within the same region, must be same DB Engine/Version | `string` | `""`          | no |
 
 
 ### CICD ( flag not created yet )
@@ -85,10 +85,10 @@ See examples folder
 
 
 #### Bastion
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| bastion_github_file | file within a repo for allowing SSH access; see below for more info | `map(string)` | n/a | yes |
-| bastion_instance_type | Instance Type for bastion server | `string` | `t2.micro` | no |
+| Name | Description | Type | Default    | Required |
+|------|-------------|------|------------|:--------:|
+| bastion_github_file | file within a repo for allowing SSH access; see below for more info | `map(string)` | n/a        | yes |
+| bastion_instance_type | Instance Type for bastion server | `string` | `t3.micro` | no |
 
 ## Bastion server
 A [bastion server](https://docs.aws.amazon.com/quickstart/latest/linux-bastion/overview.html)
