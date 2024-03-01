@@ -9,7 +9,7 @@ resource "aws_ecs_capacity_provider" "this" {
   name = local.envname
 
   auto_scaling_group_provider {
-    auto_scaling_group_arn = module.asg.autoscaling_group_arn
+    auto_scaling_group_arn = aws_autoscaling_group.asg.arn
   }
 
   tags = var.tags
