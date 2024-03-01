@@ -33,7 +33,7 @@ variable "bastion_hostname" {
 
 variable "bastion_instance_type" {
   description = "The ec2 instance type of the bastion server"
-  default     = "t2.micro"
+  default     = "t3.micro"
 }
 
 variable "public_subnet_ids" {
